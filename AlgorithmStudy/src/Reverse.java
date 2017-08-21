@@ -29,4 +29,21 @@ public class Reverse {
 			return 0 - Integer.parseInt(sb.toString());
 		}
     }
+	
+	public int reverse3(int x) {
+		String xstr = Math.abs(x) + "";
+		int length = xstr.length();
+		int i = 0;
+		int y = 0;
+		int reverse = 0;
+		while((y = (int) (x % Math.pow(10, ++ i))) != 0) {
+			x = (int) (x / Math.pow(10, i));
+			reverse += (int) (y * Math.pow(10, length - i));
+		}
+		return reverse;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(new Reverse().reverse3(32));
+	}
 }
