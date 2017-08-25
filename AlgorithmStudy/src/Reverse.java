@@ -24,9 +24,9 @@ public class Reverse {
 			sb.append(stack.pop());
 		}
 		if(x > 0) {
-			return Integer.parseInt(sb.toString());
+			return Integer.parseInt(sb.toString()) < 0 ? 0 : Integer.parseInt(sb.toString());
 		} else {
-			return 0 - Integer.parseInt(sb.toString());
+			return 0 - Integer.parseInt(sb.toString()) > 0 ? 0 : 0 - Integer.parseInt(sb.toString());
 		}
     }
 	
@@ -44,6 +44,10 @@ public class Reverse {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(new Reverse().reverse3(32));
+		
+		System.out.println(new Integer(100));
+		System.out.println(new Reverse().reverse3(-32));
 	}
 }
+
+
